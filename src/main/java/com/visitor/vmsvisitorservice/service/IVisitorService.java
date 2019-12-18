@@ -7,7 +7,7 @@ import com.visitor.vmsvisitorservice.model.Visitor;
 
 public interface IVisitorService {
 
-	String addVisitor(VisitorDto visitorDto);
+	//String addVisitor(VisitorDto visitorDto);
 
 	List<Visitor> visitorsList();
 
@@ -19,7 +19,7 @@ public interface IVisitorService {
 
 	//void save(Visitor userForm);
 
-	void registrerVisitor(Visitor visitor);
+	//void registrerVisitor(Visitor visitor);
 
 	void save(Visitor visitor);
 

@@ -1,9 +1,11 @@
 package com.visitor.vmsvisitorservice.service;
 
+import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import com.visitor.vmsvisitorservice.dao.IVisitorDao;
 import com.visitor.vmsvisitorservice.dto.VisitorDto;
@@ -20,7 +22,7 @@ public class VisitorServiceImpl implements IVisitorService {
 	@Autowired
 	private IVisitorDao visitorDao;
 
-	@Override
+	/* @Override
 	public String addVisitor(VisitorDto visitorDto) {
 		
 
@@ -45,6 +47,7 @@ public class VisitorServiceImpl implements IVisitorService {
 		return "Recored Added successfully";
 
 	}
+	*/
 
 	@Override
 	public List<Visitor> visitorsList() {
@@ -89,23 +92,42 @@ Visitor visitorData=visitorDao.findById(id);
 		return visitorDao.findByName(name);
 	}
 
-	@Override
-	public String updateVisitor(int id, Visitor visitor) {
-		Visitor employee = visitorDao.findById(id);
-		
-		return null;
-	}
-
-	@Override
-	public void registrerVisitor(Visitor visitor) {
-		// TODO Auto-generated method stub
-		
-	}
-
+//	@Override
+//	public String updateVisitor(int id, Visitor visitor) {
+//		Visitor employee = visitorDao.findById(id);
+//		
+//		return null;
+//	}
+//
+//	
 	@Override
 	public void save(Visitor visitor) {
+		visitor.setAddress(visitor.getAddress());
+		visitor.setContactPersonEmail(visitor.getContactPersonEmail());
+		visitor.setContactPersonMobileNo(visitor.getContactPersonMobileNo());
+		visitor.setEmail(visitor.getEmail());
+		visitor.setId(visitor.getId());
+		visitor.setIdProof(visitor.getIdProof());
+		visitor.setMobileNo(visitor.getMobileNo());
+		visitor.setName(visitor.getName());
+		visitor.setReasonForVisit(visitor.getReasonForVisit());
+		visitor.setContactPersonName(visitor.getContactPersonName());
 		visitorRepository.save(visitor);
 		
+	}
+	/*
+	 *  @Override
+    public void save(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setRoles(new HashSet<>(roleRepository.findAll()));
+        userRepository.save(user);
+    }
+	 */
+
+	@Override
+	public String updateVisitor(int id, Visitor visitor) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 /*
