@@ -3,6 +3,8 @@ package com.visitor.vmsvisitorservice.service;
 import java.util.HashSet;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +24,7 @@ public class VisitorServiceImpl implements IVisitorService {
 	@Autowired
 	private IVisitorDao visitorDao;
 
-	/* @Override
+	 @Override
 	public String addVisitor(VisitorDto visitorDto) {
 		
 
@@ -47,7 +49,7 @@ public class VisitorServiceImpl implements IVisitorService {
 		return "Recored Added successfully";
 
 	}
-	*/
+	
 
 	@Override
 	public List<Visitor> visitorsList() {
@@ -72,19 +74,6 @@ Visitor visitorData=visitorDao.findById(id);
 		
 		
 	}
-
-//	@Override
-//	public User loginUser(String email, String password) {
-//		User userData = userDao.loginUser(email, password);
-//
-//		if (userData == null) {
-//			throw new UserNotFoundException("");
-//		}
-//		return userData;
-//	}
-	
-	
-	
 	
 	@Override
 	public Visitor getVisitorByName(String name) {
@@ -92,87 +81,7 @@ Visitor visitorData=visitorDao.findById(id);
 		return visitorDao.findByName(name);
 	}
 
-//	@Override
-//	public String updateVisitor(int id, Visitor visitor) {
-//		Visitor employee = visitorDao.findById(id);
-//		
-//		return null;
-//	}
-//
-//	
-	@Override
-	public void save(Visitor visitor) {
-		visitor.setAddress(visitor.getAddress());
-		visitor.setContactPersonEmail(visitor.getContactPersonEmail());
-		visitor.setContactPersonMobileNo(visitor.getContactPersonMobileNo());
-		visitor.setEmail(visitor.getEmail());
-		visitor.setId(visitor.getId());
-		visitor.setIdProof(visitor.getIdProof());
-		visitor.setMobileNo(visitor.getMobileNo());
-		visitor.setName(visitor.getName());
-		visitor.setReasonForVisit(visitor.getReasonForVisit());
-		visitor.setContactPersonName(visitor.getContactPersonName());
-		visitorRepository.save(visitor);
-		
-	}
-	/*
-	 *  @Override
-    public void save(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<>(roleRepository.findAll()));
-        userRepository.save(user);
-    }
-	 */
-
-	@Override
-	public String updateVisitor(int id, Visitor visitor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-/*
- * mployeeDto employee = employeeReo.findById(id);
-try {
-EmpSkillDto empSkillToBeUpdated = empSkillRepo.findBySkillNameAndEmployee(skillName, employee);
-if (empSkillToBeUpdated != null) {
-// update existing skill
-empSkillToBeUpdated.setExperiance(skill.getExperiance());
-empSkillRepo.save(empSkillToBeUpdated);
-
-}
-
-else {
-SkillDto skillDto = skillsRepo.findBySkillName(skillName);
-EmpSkillDto newEmpSkillDto = new EmpSkillDto();
-newEmpSkillDto.setSkillid(skillDto.getSkillid());
-newEmpSkillDto.setSkillName(skillDto.getSkillName());
-newEmpSkillDto.setExperiance(skill.getExperiance());
-newEmpSkillDto.setEmployee(employee);
-
-empSkillRepo.save(newEmpSkillDto);
-
-}
-
-return "success";
-}
-
-catch (Exception e) {
-e.printStackTrace();
-return "failure";
-}
-
-}
- */
-//Visitor visitorData1=visitorDao.findByName(name);
-//		
-//		if(visitorData1==null)
-//		{
-//			throw new VisitorNotFoundException(" ", " ");
-//		}
-//
-//		return visitorData1;
-//	}
-
 
 	
+
 }

@@ -7,13 +7,11 @@ public class VisitorDto {
 	private String email;
 	private String mobileNo;
 	private String address;
-	//private String country;
-	//private String state;
-	//private String city;
+	
 	private String idProof;
 	private String contactPersonName;
 	private String contactPersonEmail;
-	//private String reference;
+	
 	private String reasonForVisit;
 	private String contactPersonMobileNo;
 
