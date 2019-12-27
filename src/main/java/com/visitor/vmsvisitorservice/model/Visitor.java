@@ -8,42 +8,41 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "visitor")
 public class Visitor {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotEmpty(message = "first name cannot be empty")
 	private String name;
-	
+
 	@Email
+	@NotEmpty
 	private String email;
-	
-	//@Pattern(regexp = "([0-9]{9}")
+
+	// @Pattern(regexp = "([0-9]{9}")
 	private String mobileNo;
-	
+
 	@NotEmpty(message = "address cannot be empty")
 	private String address;
-	
+
 	@NotEmpty(message = "idProof cannot be empty")
 	private String idProof;
-	
+
 	@NotEmpty(message = "contactPersonName cannot be empty")
 	private String contactPersonName;
 
-	
 	@NotEmpty(message = "contactPersonEmail cannot be empty")
 	private String contactPersonEmail;
-	//private String reference;
-	
+	// private String reference;
+
 	@NotEmpty(message = "reasonForVisit cannot be empty")
 	private String reasonForVisit;
-	
+
 	@Column(name = "status", nullable = false, columnDefinition = "int default 0")
 	private int status;
 
@@ -161,8 +160,5 @@ public class Visitor {
 	public void setContactPersonMobileNo(String contactPersonMobileNo) {
 		this.contactPersonMobileNo = contactPersonMobileNo;
 	}
-	
-	
-	
 
 }

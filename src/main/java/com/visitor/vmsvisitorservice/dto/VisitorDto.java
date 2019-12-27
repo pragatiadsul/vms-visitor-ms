@@ -7,11 +7,11 @@ public class VisitorDto {
 	private String email;
 	private String mobileNo;
 	private String address;
-	
+
 	private String idProof;
 	private String contactPersonName;
 	private String contactPersonEmail;
-	
+
 	private String reasonForVisit;
 	private String contactPersonMobileNo;
 
@@ -105,7 +105,4 @@ public class VisitorDto {
 		this.contactPersonMobileNo = contactPersonMobileNo;
 	}
 
-
-	
-	
 }
