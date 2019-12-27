@@ -22,29 +22,6 @@ public class VisitorServiceImpl implements IVisitorService {
 	@Autowired
 	private IVisitorDao visitorDao;
 
-	/*
-	 * @Override public String addVisitor(VisitorDto visitorDto) {
-	 * 
-	 * 
-	 * Visitor va = new Visitor(); va.setAddress(visitorDto.getAddress());
-	 * //va.setCity(visitorDto.getCity());
-	 * va.setContactPersonEmail(visitorDto.getContactPersonEmail());
-	 * va.setContactPersonName(visitorDto.getContactPersonName());
-	 * //va.setCountry(visitorDto.getCountry()); va.setEmail(visitorDto.getEmail());
-	 * va.setId(visitorDto.getId()); va.setIdProof(visitorDto.getIdProof());
-	 * //va.setMobileNo(visitorDto.getMobileNo());
-	 * va.setMobileNo(visitorDto.getMobileNo());
-	 * 
-	 * va.setName(visitorDto.getName());
-	 * va.setReasonForVisit(visitorDto.getReasonForVisit());
-	 * va.setContactPersonMobileNo(visitorDto.getContactPersonMobileNo());
-	 * //va.setReference(visitorDto.getReference());
-	 * //va.setState(visitorDto.getState()); visitorRepository.save(va); return
-	 * "Recored Added successfully";
-	 * 
-	 * }
-	 * 
-	 */
 	@Override
 	public List<Visitor> visitorsList() {
 
@@ -53,8 +30,6 @@ public class VisitorServiceImpl implements IVisitorService {
 
 	@Override
 	public Visitor getByVisitorId(long id) {
-
-		// return visitorDao.findById(id);
 
 		Visitor visitorData = visitorDao.findById(id);
 
