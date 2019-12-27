@@ -33,7 +33,6 @@ public class VisitorDaoImpl implements IVisitorDao {
 		TypedQuery<Visitor> tq = entityManger.createQuery(select);
 		List<Visitor> visitors_List = tq.getResultList();
 		return visitors_List;
-
 	}
 
 	@Override
@@ -58,7 +57,6 @@ public class VisitorDaoImpl implements IVisitorDao {
 		cq.where(userNamePredicate);
 		TypedQuery<Visitor> query = entityManger.createQuery(cq);
 		return query.getSingleResult();
-
 	}
 
 	@Override
